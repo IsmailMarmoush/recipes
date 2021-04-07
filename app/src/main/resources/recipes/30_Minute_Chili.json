@@ -1,5 +1,5 @@
 {
-  "$type":"RecipeV04",
+  "$type":"RecipeV05",
   "head":{
     "title":"30 Minute Chili",
     "categories":[
@@ -59,7 +59,5 @@
       "item":"Hot pepper sauce; to taste"
     }
   ],
-  "directions":{
-    "step":"Brown the meat in a little butter and cook until the meat is brown -- about\n  10 minutes. Add all other ingredients and let simmer for 30 minutes. Your\n  choice of hot sauce may be added to taste.\n  \n  Recipe by: MasterCook Archives\n  \n  Posted to recipelu-digest Volume 01 Number 577 by Rodeo46898\n  <Rodeo46898@aol.com> on Jan 22, 1998"
-  }
+  "directions":"Brown the meat in a little butter and cook until the meat is brown -- about\n  10 minutes. Add all other ingredients and let simmer for 30 minutes. Your\n  choice of hot sauce may be added to taste.\n  \n  Recipe by: MasterCook Archives\n  \n  Posted to recipelu-digest Volume 01 Number 577 by Rodeo46898\n  <Rodeo46898@aol.com> on Jan 22, 1998"
 }

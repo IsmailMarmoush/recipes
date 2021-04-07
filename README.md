@@ -46,13 +46,14 @@ Requirements:
 * The JSON format would contain `{ "$type":"Recipe05", ....}` as type reference
 * Using the `Amaretto_cake.json` schema as version v0.5.0
 * Using `30_Minute_Chili.json` and `Another_Zucchini_Dish.json` schema as version v0.4.0
-* v0.5.0 Changes
+* v0.6.0 Changes
     * Because `ingredients` is a group of ingredients it will be a key:value map, this enforces group naming uniqueness and simplifies payload
         * key is the group name e.g Glaze
         * value is a group(aka array) of items each item has an amount (quantity, unit) and item.
         * Also For `ingredients` keys, we'll opt to using real names e.g `amount` instead of `amt` for more readability,
           and for i18n & l10n
     * For the `directions` property we'll make it an array of steps to preserve order, and for better displaying the steps instead of a bulk paragraph it can be a checkboxes of steps
+* v0.5.0 Changes
+    * ...
 * v0.4.0 Changes
-    * N/A
-  
+    * ...

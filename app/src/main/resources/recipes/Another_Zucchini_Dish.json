@@ -1,5 +1,5 @@
 {
-  "$type":"RecipeV04",
+  "$type":"RecipeV05",
   "head":{
     "title":"Another Zucchini Dish",
     "categories":[
@@ -52,7 +52,5 @@
       "item":"French fried onion rings 3 oz."
     }
   ],
-  "directions":{
-    "step":"Place zucchini and butter in a 2 quart casserole. Cover with plastic wrap.\n  Microwave at high (100%) until tender crisp, 4 to 5 minutes. Stir in egg,\n  pimentos and cheese. Blend well. Cover with plastic wrap. Microwave at\n  medium (50%) until eggs are set, 10 toll minutes. Sprinkle onion rings on\n  top. Microwave at medium (50%) until onion rings are heated, 2 to 2 1/2\n  minutes. Makes 6 servings.\n  \n  Recipe by: diane@keyway.net\n  \n  Posted to recipelu-digest Volume 01 Number 217 by \"Diane Geary\"\n  <diane@keyway.net> on Nov 7, 1997"
-  }
+  "directions":"Place zucchini and butter in a 2 quart casserole. Cover with plastic wrap.\n  Microwave at high (100%) until tender crisp, 4 to 5 minutes. Stir in egg,\n  pimentos and cheese. Blend well. Cover with plastic wrap. Microwave at\n  medium (50%) until eggs are set, 10 toll minutes. Sprinkle onion rings on\n  top. Microwave at medium (50%) until onion rings are heated, 2 to 2 1/2\n  minutes. Makes 6 servings.\n  \n  Recipe by: diane@keyway.net\n  \n  Posted to recipelu-digest Volume 01 Number 217 by \"Diane Geary\"\n  <diane@keyway.net> on Nov 7, 1997"
 }
