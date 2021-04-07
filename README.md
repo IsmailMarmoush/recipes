@@ -58,4 +58,4 @@
 
 ## 3.0 TODOs
 
-* Add pagination implementations yet, but should be done in the future releases
+* Query result pagination
