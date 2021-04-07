@@ -4,7 +4,7 @@
 
 > As a web designer I would like to retrieve recipes from the back-end system, so I can display them in my app
 
-Requirements:
+**Requirements:**
 
 - Without any additional query parameters, should return all recipes known to the back-end service
 - Support filtering based on recipe category
@@ -14,7 +14,7 @@ Requirements:
 
 > As a web designer I would like to retrieve the available recipe categories, so I can do more focused requests for specific recipe types
 
-Requirements:
+**Requirements:**
 
 - Operation returns all recipe categories
 
@@ -22,7 +22,7 @@ Requirements:
 
 > As a web designer I want to be able to add new recipes, so I can expand the recipe database with new, tasty and inspiring recipes
 
-Requirements:
+**Requirements:**
 
 - When given valid input, creates a new recipe in the backend which can then be retrieved by the service's clients
 - Make sure the provided input is valid
@@ -40,6 +40,10 @@ Requirements:
   included as XML files with the assignment.
 
 # Architecture:
+
+## Current limitations
+
+* No pagination implementations yet, but should be done in the future releases
 
 ## 1.0 Decisions
 
@@ -65,3 +69,31 @@ Requirements:
     * ...
 * v0.4.0 Changes
     * ...
+
+# Running the application
+
+## Run through docker
+
+**Requirements**
+
+1. Rename [.github/my_setting.xml](.github/my_settings.xml) to `settings.xml`
+1. Go to your GitHub account https://github.com/settings/tokens/new
+1. Create a token which has permission of `read:packages`
+1. Copy that token to the [.github/setting.xml](.github/settings.xml) file in the password
+1. Don't forget to put your github username instead of username
+
+**Steps**
+
+1. Make sure docker is installed
+2. Inside the project main directory do `docker build . -t recipes:latest`
+3. then `docker run -it recipes:latest`
+4. Your application would be running on port 8090
+
+### Run on local
+
+**Requirements**
+
+1. Make sure you have openjdk 16
+2. Maven 3.6.3
+3. Make sure your `~/.m2/settings.xml` has access to GitHub packages (follow docker requirement steps)
+4. Run `java --enable-preview -jar "/recipes/app/target/io.memoria.recipes-*.jar"`

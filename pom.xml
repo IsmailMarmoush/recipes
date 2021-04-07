@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.memoria</groupId>
+        <artifactId>jbom</artifactId>
+        <version>0.38.0</version>
+    </parent>
+
+    <artifactId>recipes</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>recipes Parent Pom</description>
+    <url>https://memoria.io/recipes</url>
+    <organization>
+        <name>memoria</name>
+        <url>https://memoria.io</url>
+    </organization>
+
+    <modules>
+        <module>core</module>
+        <module>app</module>
+    </modules>
+
+    <properties>
+        <jutils.version>0.240.0</jutils.version>
+        <openapi4j.version>1.0.4</openapi4j.version>
+        <reactor.version>2020.0.5</reactor.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/memoria-io/*</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ===============================================================   -->
+            <!-- Jutils Dependencies                                               -->
+            <!-- ===============================================================   -->
+            <dependency>
+                <groupId>io.memoria.jutils</groupId>
+                <artifactId>jcore</artifactId>
+                <version>${jutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.memoria.jutils</groupId>
+                <artifactId>jtext</artifactId>
+                <version>${jutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.memoria.jutils</groupId>
+                <artifactId>jweb</artifactId>
+                <version>${jutils.version}</version>
+            </dependency>
+            <!-- ===============================================================   -->
+            <!-- Reactive Streams Dependencies                                     -->
+            <!-- ===============================================================   -->
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>${reactor.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- ===============================================================   -->
+            <!-- OpenAPI Dependencies                                               -->
+            <!-- ===============================================================   -->
+            <dependency>
+                <groupId>org.openapi4j</groupId>
+                <artifactId>openapi-parser</artifactId>
+                <version>${openapi4j.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openapi4j</groupId>
+                <artifactId>openapi-schema-validator</artifactId>
+                <version>${openapi4j.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!--======================================================================================== -->
+        <!-- Reactive Dependencies -->
+        <!--======================================================================================== -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- ===============================================================   -->
+        <!-- Jutils Dependencies                                               -->
+        <!-- ===============================================================   -->
+        <dependency>
+            <groupId>io.memoria.jutils</groupId>
+            <artifactId>jcore</artifactId>
+        </dependency>
+    </dependencies>
+</project>

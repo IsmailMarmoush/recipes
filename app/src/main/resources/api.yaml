@@ -3,19 +3,31 @@ info:
   title: Recipe
   version: 0.6.0
 servers:
-  - url: http://memoria.io/recipe
+  - url: http://memoria.io/
 paths:
   /varz:
     get:
       description: Monitoring path
       responses:
         '200':
-          description: Expected response to a valid request
+          description: service is running ok
           content:
             text/plain:
               schema:
                 type: string
-  /:
+  /categories:
+    get:
+      description: get all categories
+      responses:
+        '200':
+          description: list of all categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /recipes:
     post:
       description: Creating a recipe
       requestBody:
@@ -32,12 +44,35 @@ paths:
             text/plain:
               schema:
                 type: string
-        default:
-          description: unexpected error
+        '400':
+          description: Bad request
           content:
             text/plain:
               schema:
                 type: string
+                example: A recipe with the same title already exists
+    get:
+      description: Return all recipes
+      parameters:
+        - in: query
+          description: Filter by category
+          name: category
+          schema:
+            type: string
+        - in: query
+          description: Filter by text in directions or title
+          name: contains
+          schema:
+            type: string
+      responses:
+        '200':
+          description: All recipes matching
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RecipeDto'
 components:
   schemas:
     RecipeDto:
@@ -62,7 +97,7 @@ components:
                 type: string
               ingredientGroupValues:
                 type: array
-                items: 
+                items:
                   $ref: '#/components/schemas/Ingredient'
         directions:
           type: array

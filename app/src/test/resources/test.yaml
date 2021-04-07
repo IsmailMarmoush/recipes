@@ -1,0 +1,42 @@
+#######################################################################
+# Server Configs
+#######################################################################
+server:
+  host: "127.0.0.1"
+  port: 8091
+  maxStartupTime: 10
+  isWiretapping: true
+  isSecure: false
+  sslCertificate: secrets/server/certificate.cert
+  privateKey: secrets/server/private-pkcs8.key
+
+#######################################################################
+#  api Configs
+#######################################################################
+include: app_routes.yaml
+
+#######################################################################
+# Repo Configs
+#######################################################################
+repo:
+  idGeneratorType: serial
+
+eventStoreConf:
+  dbType: "h2"
+  host: "jdbc:h2:~/test"
+  port: 0
+  username: "sa"
+  password: "sa"
+
+#######################################################################
+# Client Configs
+#######################################################################
+#isSecure: false
+#clientSslCertificate: secrets/client/certificate.cert
+#clientPrivateKey: secrets/client/private-pkcs8.key
+
+# Hashing
+hasher:
+  iterations: 10
+  memory: 1000
+  parallelism: 2
