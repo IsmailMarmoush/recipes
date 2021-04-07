@@ -1,0 +1,120 @@
+{
+  "$type":"RecipeV06",
+  "head":{
+    "title":"Amaretto Cake",
+    "categories":[
+      "Liquor",
+      "Cakes",
+      "Cake mixes"
+    ],
+    "yield":"1"
+  },
+  "ingredients":{
+    "dd":[
+      {
+        "amount":{
+          "quantity":"1 1/2",
+          "unit":"cups"
+        },
+        "item":"Toasted Almonds; chopped"
+      },
+      {
+        "amount":{
+          "quantity":"1",
+          "unit":"package"
+        },
+        "item":"Yellow cake mix; no pudding"
+      },
+      {
+        "amount":{
+          "quantity":"1",
+          "unit":"package"
+        },
+        "item":"Vanilla instant pudding"
+      },
+      {
+        "amount":{
+          "quantity":"4",
+          "unit":""
+        },
+        "item":"Eggs"
+      },
+      {
+        "amount":{
+          "quantity":"1/2",
+          "unit":"cups"
+        },
+        "item":"Vegetable oil"
+      },
+      {
+        "amount":{
+          "quantity":"1/2",
+          "unit":"cups"
+        },
+        "item":"Water"
+      },
+      {
+        "amount":{
+          "quantity":"1/2",
+          "unit":"cups"
+        },
+        "item":"Amaretto"
+      },
+      {
+        "amount":{
+          "quantity":"1",
+          "unit":"teaspoon"
+        },
+        "item":"Almond extract"
+      }
+    ],
+    "GLAZE":[
+      {
+        "amount":{
+          "quantity":"1/2",
+          "unit":"cups"
+        },
+        "item":"Sugar"
+      },
+      {
+        "amount":{
+          "quantity":"1/4",
+          "unit":"cups"
+        },
+        "item":"Water"
+      },
+      {
+        "amount":{
+          "quantity":"2",
+          "unit":"tablespoons"
+        },
+        "item":"Butter"
+      },
+      {
+        "amount":{
+          "quantity":"1/4",
+          "unit":"cups"
+        },
+        "item":"Amaretto"
+      },
+      {
+        "amount":{
+          "quantity":"1/2",
+          "unit":"teaspoons"
+        },
+        "item":"Almond extract"
+      }
+    ]
+  },
+  "directions":[
+    "Sprinkle 1 cup almonds into bottom of a well-greased and floured 10\" tube pan set aside.",
+    "Combine cake mix, pudding mix, eggs, oil, water,amaretto, and almond extract in a mixing bowl beat on low speed of an electric mixer til dry ingredients are moistened. ",
+    "Increase speed to medium, and beat 4 minutes.",
+    "Stir in remaining 1/2 cup almonds. Pour batter into prepared tube pan.",
+    "Bake at 325~ for 1 hour or til a wooden pick inserted in center comes out clean. Cool cake in pan 10-15 minutes remove from pan, and cool completely.",
+    "Combine sugar,water, and butter in a small saucepan bring to a boil.",
+    "Reduce heat to medium and gently boil 4-5 minutes, stirring occasionally, until sugar dissolves.",
+    "Remove from heat, and cool 15 minutes. Stir in amaretto and almond extract.",
+    "Punch holes in top of cake with a wooden pick slowly spoon glaze on top of cake, allowing glaze to absorb in cake."
+  ]
+}
