@@ -9,8 +9,8 @@
 
 * Converting all XMLs to JSON
 * The JSON format would contain `{ "$type":"Recipe05", ....}` as type reference
-* Using the `Amaretto_cake.json` schema as version v0.5.0
-* Using `30_Minute_Chili.json` and `Another_Zucchini_Dish.json` schema as version v0.4.0
+* Using the `Amaretto_cake.json` schema as version v0.6.0
+* Using `30_Minute_Chili.json` and `Another_Zucchini_Dish.json` schema as version v0.5.0
 * v0.6.0 Changes
     * Because `ingredients` is a group of ingredients it will be a key:value map, this enforces group naming uniqueness
       and simplifies payload
