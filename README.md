@@ -1,6 +1,8 @@
 # Requirements
 
-### Story 1 - As a web designer I would like to retrieve recipes from the back-end system, so I can display them in my app
+### Story 1
+
+> As a web designer I would like to retrieve recipes from the back-end system, so I can display them in my app
 
 Requirements:
 
@@ -8,13 +10,17 @@ Requirements:
 - Support filtering based on recipe category
 - Support search strings, with the service then trying to match these in relevant fields (for example name and category)
 
-### Story 2 - As a web designer I would like to retrieve the available recipe categories, so I can do more focused requests for specific recipe types
+### Story 2
+
+> As a web designer I would like to retrieve the available recipe categories, so I can do more focused requests for specific recipe types
 
 Requirements:
 
 - Operation returns all recipe categories
 
-### Story 3 - As a web designer I want to be able to add new recipes, so I can expand the recipe database with new, tasty and inspiring recipes
+### Story 3
+
+> As a web designer I want to be able to add new recipes, so I can expand the recipe database with new, tasty and inspiring recipes
 
 Requirements:
 
@@ -47,12 +53,14 @@ Requirements:
 * Using the `Amaretto_cake.json` schema as version v0.5.0
 * Using `30_Minute_Chili.json` and `Another_Zucchini_Dish.json` schema as version v0.4.0
 * v0.6.0 Changes
-    * Because `ingredients` is a group of ingredients it will be a key:value map, this enforces group naming uniqueness and simplifies payload
+    * Because `ingredients` is a group of ingredients it will be a key:value map, this enforces group naming uniqueness
+      and simplifies payload
         * key is the group name e.g Glaze
         * value is a group(aka array) of items each item has an amount (quantity, unit) and item.
         * Also For `ingredients` keys, we'll opt to using real names e.g `amount` instead of `amt` for more readability,
           and for i18n & l10n
-    * For the `directions` property we'll make it an array of steps to preserve order, and for better displaying the steps instead of a bulk paragraph it can be a checkboxes of steps
+    * For the `directions` property we'll make it an array of steps to preserve order, and for better displaying the
+      steps instead of a bulk paragraph it can be a checkboxes of steps
 * v0.5.0 Changes
     * ...
 * v0.4.0 Changes
