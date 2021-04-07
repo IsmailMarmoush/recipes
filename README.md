@@ -32,10 +32,10 @@
 **Requirements**
 
 1. Rename [.github/my_setting.xml](.github/my_settings.xml) to `settings.xml`
-1. Go to your GitHub account https://github.com/settings/tokens/new
-1. Create a token which has permission of `read:packages`
-1. Copy that token to the [.github/setting.xml](.github/settings.xml) file in the password
-1. Don't forget to put your github username instead of username
+2. Go to your GitHub account https://github.com/settings/tokens/new
+3. Create a token which has permission of `read:packages`
+4. Copy that token to the [.github/setting.xml](.github/settings.xml) file in the password
+5. Don't forget to put your github username instead of username
 
 **Steps**
 
@@ -51,8 +51,10 @@
 1. Make sure you have openjdk 16
 2. Maven 3.6.3
 3. Make sure your `~/.m2/settings.xml` has access to GitHub packages (follow docker requirement steps)
-4. Run `java --enable-preview -jar "/recipes/app/target/io.memoria.recipes-*.jar"`
 
+**Steps**
+
+1. Run `java --enable-preview -jar "/recipes/app/target/io.memoria.recipes-*.jar"`
 
 ## 3.0 TODOs
 
