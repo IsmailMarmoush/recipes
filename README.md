@@ -1,49 +1,4 @@
-# Requirements
-
-### Story 1
-
-> As a web designer I would like to retrieve recipes from the back-end system, so I can display them in my app
-
-**Requirements:**
-
-- Without any additional query parameters, should return all recipes known to the back-end service
-- Support filtering based on recipe category
-- Support search strings, with the service then trying to match these in relevant fields (for example name and category)
-
-### Story 2
-
-> As a web designer I would like to retrieve the available recipe categories, so I can do more focused requests for specific recipe types
-
-**Requirements:**
-
-- Operation returns all recipe categories
-
-### Story 3
-
-> As a web designer I want to be able to add new recipes, so I can expand the recipe database with new, tasty and inspiring recipes
-
-**Requirements:**
-
-- When given valid input, creates a new recipe in the backend which can then be retrieved by the service's clients
-- Make sure the provided input is valid
-- Do not allow multiple recipes with the same name (so people don't get confused)
-
-## Restrictions, requirements and expectations:
-
-- You are free in the design of the REST interface. We will review your design on aspects such as paths, request and
-  response bodies, HTTP response codes, etc.
-- Use the Mendix Desktop Modeler for the Mendix portion of the assignment. The Web Modeler does not yet support
-  consumption of REST services.
-- While we do not expect any automated tests for the Mendix portion of the assignment, we do expect unit tests to cover
-  the back-end functionality you built in stories 1-3.
-- The recipes in the backend should be stored in memory. The recipes with which the app will initially launch are
-  included as XML files with the assignment.
-
-# Architecture:
-
-## Current limitations
-
-* No pagination implementations yet, but should be done in the future releases
+# Recipes:
 
 ## 1.0 Decisions
 
@@ -70,9 +25,9 @@
 * v0.4.0 Changes
     * ...
 
-# Running the application
+## 2.0 Running the application
 
-## Run through docker
+### 2.1 Run through docker
 
 **Requirements**
 
@@ -89,7 +44,7 @@
 3. then `docker run -it recipes:latest`
 4. Your application would be running on port 8090
 
-### Run on local
+### 2.2 Run on local
 
 **Requirements**
 
@@ -97,3 +52,8 @@
 2. Maven 3.6.3
 3. Make sure your `~/.m2/settings.xml` has access to GitHub packages (follow docker requirement steps)
 4. Run `java --enable-preview -jar "/recipes/app/target/io.memoria.recipes-*.jar"`
+
+
+## 3.0 TODOs
+
+* Add pagination implementations yet, but should be done in the future releases
