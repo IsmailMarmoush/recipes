@@ -1,0 +1,128 @@
+openapi: "3.0.3"
+info:
+  title: Recipe
+  version: 0.6.0
+servers:
+  - url: http://memoria.io/recipe
+paths:
+  /varz:
+    get:
+      description: Monitoring path
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            text/plain:
+              schema:
+                type: string
+  /:
+    post:
+      description: Creating a recipe
+      requestBody:
+        description: Contains the recipe properties
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeDto'
+      responses:
+        '201':
+          description: Resource has been created
+          content:
+            text/plain:
+              schema:
+                type: string
+        default:
+          description: unexpected error
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    RecipeDto:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/RecipeDtoV06'
+        - $ref: '#/components/schemas/RecipeDtoV05'
+      discriminator:
+        propertyName: "$type"
+    RecipeDtoV06:
+      type: object
+      properties:
+        $type:
+          type: string
+        head:
+          $ref: '#/components/schemas/Head'
+        ingredients:
+          type: object
+          additionalProperties:
+            properties:
+              ingredientGroupKey:
+                type: string
+              ingredientGroupValues:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Ingredient'
+        directions:
+          type: array
+          items:
+            type: string
+      required:
+        - $type
+        - head
+        - ingredients
+        - directions
+    RecipeDtoV05:
+      type: object
+      properties:
+        $type:
+          type: string
+        head:
+          $ref: '#/components/schemas/Head'
+        ingredients:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ingredient'
+        directions:
+          type: string
+      required:
+        - $type
+        - head
+        - ingredients
+        - directions
+    Head:
+      type: object
+      properties:
+        title:
+          type: string
+        categories:
+          type: array
+          items:
+            type: string
+        yield:
+          type: string
+      required:
+        - title
+        - categories
+        - yield
+    Ingredient:
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/Amount'
+        item:
+          type: string
+      required:
+        - amount
+        - item
+    Amount:
+      type: object
+      properties:
+        quantity:
+          type: string
+        item:
+          type: string
+      required:
+        - quantity
+        - unit
