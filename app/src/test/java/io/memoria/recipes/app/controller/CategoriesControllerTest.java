@@ -40,7 +40,7 @@ class CategoriesControllerTest {
   @Test
   void getCategories() {
     // when
-    var result = NettyClientUtils.get(serverUrl, categoriesPath).doOnNext(t -> System.out.println(t._2));
+    var result = NettyClientUtils.get(serverUrl, categoriesPath);
     // Then
     StepVerifier.create(result)
                 .expectNextMatches(t -> t._1.equals(OK) && t._2.equals(categories))
