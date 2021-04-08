@@ -1,6 +1,7 @@
 ## Create Recipe
 
-> As a web designer I want to be able to add new recipes, so I can expand the recipe database with new, tasty and inspiring recipes
+> As a web designer I want to be able to add new recipes, so I can expand the recipe database with new,
+> tasty and inspiring recipes
 
 **Requirements:**
 
