@@ -1,8 +1,8 @@
-package io.memoria.recipes.core.repo.mem;
+package io.memoria.recipes.core.service;
 
 import io.memoria.jutils.jcore.id.Id;
 import io.memoria.recipes.core.recipe.Recipe;
-import io.vavr.collection.HashSet;
+import io.memoria.recipes.core.repo.mem.RecipeMemRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,9 +14,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import static io.memoria.recipes.core.TestResource.amarettoCake;
 import static io.memoria.recipes.core.TestResource.omeletteRecipe;
 
-class RecipeMemRepoTest {
+class RecipeServiceTest {
   private final ConcurrentHashMap<Id, Recipe> db = new ConcurrentHashMap<>();
-  private final RecipeMemRepo repo = new RecipeMemRepo(db);
+  private final RecipeMemRepo memRepo = new RecipeMemRepo(db);
+  private final RecipeService service = new RecipeService(memRepo, memRepo);
 
   @BeforeEach
   void beforeEach() {
@@ -24,22 +25,11 @@ class RecipeMemRepoTest {
   }
 
   @Test
-  @DisplayName("Mem Repo should return all categories")
-  void categories() {
-    // Given
-    db.put(Id.of(omeletteRecipe.head().title()), omeletteRecipe);
-    db.put(Id.of(amarettoCake.head().title()), amarettoCake);
-    var expectedCats = HashSet.of("eggs", "breakfast", "Liquor", "Cakes", "Cake mixes");
-    // When
-    StepVerifier.create(repo.categories().collectList().map(HashSet::ofAll)).expectNext(expectedCats).verifyComplete();
-  }
-
-  @Test
   @DisplayName("Mem repo should create recipe successfully")
   void create() {
     // Given
     var id = Id.of(omeletteRecipe.head().title());
-    StepVerifier.create(repo.create(omeletteRecipe)).expectNext(id).verifyComplete();
+    StepVerifier.create(service.create(omeletteRecipe)).expectNext(id).verifyComplete();
     Assertions.assertEquals(omeletteRecipe, db.get(id));
   }
 
@@ -50,9 +40,9 @@ class RecipeMemRepoTest {
     db.put(Id.of(omeletteRecipe.head().title()), omeletteRecipe);
     db.put(Id.of(amarettoCake.head().title()), amarettoCake);
     // When
-    StepVerifier.create(repo.recipes("breakfast")).expectNext(omeletteRecipe).verifyComplete();
-    StepVerifier.create(repo.recipes("eggs")).expectNext(amarettoCake, omeletteRecipe).verifyComplete();
-    StepVerifier.create(repo.recipes("none")).verifyComplete();
+    StepVerifier.create(service.recipes("breakfast")).expectNext(omeletteRecipe).verifyComplete();
+    StepVerifier.create(service.recipes("eggs")).expectNext(amarettoCake, omeletteRecipe).verifyComplete();
+    StepVerifier.create(service.recipes("none")).verifyComplete();
   }
 
   @Test
@@ -62,7 +52,7 @@ class RecipeMemRepoTest {
     db.put(Id.of(omeletteRecipe.head().title()), omeletteRecipe);
     db.put(Id.of(amarettoCake.head().title()), amarettoCake);
     // When
-    StepVerifier.create(repo.recipes()).expectNext(omeletteRecipe, amarettoCake).verifyComplete();
+    StepVerifier.create(service.recipes()).expectNext(omeletteRecipe, amarettoCake).verifyComplete();
   }
 
   @Test
@@ -72,8 +62,8 @@ class RecipeMemRepoTest {
     db.put(Id.of(omeletteRecipe.head().title()), omeletteRecipe);
     db.put(Id.of(amarettoCake.head().title()), amarettoCake);
     // When
-    StepVerifier.create(repo.search("amaretto")).expectNext(amarettoCake).verifyComplete();
-    StepVerifier.create(repo.search("eggs")).expectNext(amarettoCake, omeletteRecipe).verifyComplete();
-    StepVerifier.create(repo.search("none")).verifyComplete();
+    StepVerifier.create(service.search("amaretto")).expectNext(amarettoCake).verifyComplete();
+    StepVerifier.create(service.search("eggs")).expectNext(amarettoCake, omeletteRecipe).verifyComplete();
+    StepVerifier.create(service.search("none")).verifyComplete();
   }
 }

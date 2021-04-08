@@ -6,7 +6,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface RecipeRepo {
-  Flux<Recipe> all();
-
   Mono<Id> create(Recipe recipe);
+
+  Flux<Recipe> recipes(String filterByCategory);
+
+  Flux<Recipe> recipes();
 }
