@@ -8,10 +8,10 @@ import io.vavr.collection.Set;
 
 import java.util.function.Function;
 
-public final record RecipeDtoV05(Head head, Set<String> ingredients, String directions) implements RecipeDto {
+public final record RecipeDtoV5(Head head, Set<String> ingredients, String directions) implements RecipeDto {
   public static final String BASE_INGREDIENTS = "Base Ingredients";
 
-  public RecipeDtoV05(Recipe recipe) {
+  public RecipeDtoV5(Recipe recipe) {
     this(recipe.head(),
          recipe.ingredients().values().toSet().flatMap(Function.identity()),
          recipe.directions().mkString(" "));

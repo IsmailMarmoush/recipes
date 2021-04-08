@@ -1,6 +1,7 @@
 {
-  "$type":"RecipeV06",
+  "$type":"RecipeDtoV6",
   "head":{
+    "$type":"Head",
     "title":"Amaretto Cake",
     "categories":[
       "Liquor",

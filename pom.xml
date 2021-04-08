@@ -27,7 +27,7 @@
     </modules>
 
     <properties>
-        <jutils.version>0.240.0</jutils.version>
+        <jutils.version>0.241.0</jutils.version>
         <openapi4j.version>1.0.4</openapi4j.version>
         <reactor.version>2020.0.5</reactor.version>
     </properties>

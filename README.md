@@ -19,8 +19,8 @@
             * Such complex object would make chefs struggle to write their recipes and be creative
             * The object is written already in string, because the original author knew such problem
             * This complexity introduced as a middle solution is unnecessary.
-            * Cooking ingredient measurement is very complex to be listed, and it'd be better to use NLP or AI if certain
-              analysis was needed in the future
+            * Cooking ingredient measurement is very complex to be listed, and it'd be better to use NLP or AI if
+              certain analysis was needed in the future
     * For the `directions` property we'll make it an array of steps to preserve order, and for better displaying the
       steps instead of a bulk paragraph it can be a checkboxes of steps
 * v0.5.0 Changes

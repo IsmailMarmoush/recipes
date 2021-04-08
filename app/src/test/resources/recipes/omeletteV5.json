@@ -1,0 +1,18 @@
+{
+  "$type":"RecipeDtoV5",
+  "head":{
+    "$type":"Head",
+    "title":"omelette",
+    "categories":[
+      "eggs",
+      "breakfast"
+    ],
+    "yield":2
+  },
+  "ingredients":[
+    "sprinkle of salt",
+    "2 table spoon of oil",
+    "2 eggs"
+  ],
+  "directions":"break the eggs whisk the eggs put the salt on eggs heat the pan with oil pour the whisked eggs"
+}

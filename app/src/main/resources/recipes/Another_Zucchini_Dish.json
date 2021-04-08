@@ -1,6 +1,7 @@
 {
-  "$type":"RecipeV05",
+  "$type":"RecipeDtoV5",
   "head":{
+    "$type":"Head",
     "title":"Another Zucchini Dish",
     "categories":[
       "Microwave",

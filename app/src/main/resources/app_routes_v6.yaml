@@ -1,0 +1,6 @@
+apiV6:
+  root: /v6
+  varz: /v6/varz
+  recipes: /v6/recipes
+  recipesSearch: /v6/recipes/search
+  categories: /v6/categories

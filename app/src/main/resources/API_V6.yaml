@@ -1,0 +1,137 @@
+openapi: "3.0.3"
+info:
+  title: Recipes API
+  version: 6.0.0
+servers:
+  - url: http://localhost:8090/v6
+paths:
+  /varz:
+    get:
+      description: Monitoring path
+      responses:
+        '200':
+          description: service is running ok
+          content:
+            text/plain:
+              schema:
+                type: string
+  /categories:
+    get:
+      description: get all categories
+      responses:
+        '200':
+          description: list of all categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /recipes:
+    post:
+      description: Creating a recipe
+      requestBody:
+        description: Contains the recipe properties
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeDto'
+      responses:
+        '201':
+          description: Resource has been created
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: A recipe with the same title already exists
+    get:
+      description: Return all recipes
+      parameters:
+        - in: query
+          description: Filter by category
+          name: category
+          schema:
+            type: string
+      responses:
+        '200':
+          description: All recipes matching
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RecipeDto'
+  /recipes/search:
+    get:
+      description: Simple Search query
+      parameters:
+        - in: query
+          description: Search by text
+          name: text
+          schema:
+            type: string
+      responses:
+        '200':
+          description: All recipes matching
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RecipeDto'
+components:
+  schemas:
+    RecipeDto:
+      type: object
+      properties:
+        $type:
+          type: string
+        head:
+          $ref: '#/components/schemas/Head'
+        ingredients:
+          type: object
+          additionalProperties:
+            minLength: 1
+            properties:
+              ingredientGroupKey:
+                type: string
+              ingredientGroupValues:
+                type: array
+                items:
+                  type: string
+                minLength: 1
+        directions:
+          type: array
+          items:
+            type: string
+            minLength: 1
+      required:
+        - $type
+        - head
+        - ingredients
+        - directions
+    Head:
+      type: object
+      properties:
+        $type:
+          type: string
+        title:
+          type: string
+        categories:
+          type: array
+          items:
+            type: string
+        yield:
+          type: string
+      required:
+        - $type
+        - title
+        - categories
+        - yield
