@@ -15,9 +15,12 @@
     * Because `ingredients` is a group of ingredients it will be a key:value map, this enforces group naming uniqueness
       and simplifies payload
         * key is the group name e.g Glaze
-        * value is a group(aka array) of items each item has an amount (quantity, unit) and item.
-        * Also For `ingredients` keys, we'll opt to using real names e.g `amount` instead of `amt` for more readability,
-          and for i18n & l10n
+        * value will be an array of strings instead of complex `ingredient(item, amount (unit/qty)`:
+            * Such complex object would make chefs struggle to write their recipes and be creative
+            * The object is written already in string, because the original author knew such problem
+            * This complexity introduced as a middle solution is unnecessary.
+            * Cooking ingredient measurement is very complex to be listed, and it'd be better to use NLP or AI if certain
+              analysis was needed in the future
     * For the `directions` property we'll make it an array of steps to preserve order, and for better displaying the
       steps instead of a bulk paragraph it can be a checkboxes of steps
 * v0.5.0 Changes

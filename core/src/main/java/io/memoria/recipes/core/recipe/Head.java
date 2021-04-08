@@ -1,5 +1,5 @@
 package io.memoria.recipes.core.recipe;
 
-import io.vavr.collection.List;
+import io.vavr.collection.Set;
 
-public record Head(String title, List<String> categories, int yield) {}
+public record Head(String title, Set<String> categories, int yield) {}

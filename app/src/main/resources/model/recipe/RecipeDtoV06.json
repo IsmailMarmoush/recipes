@@ -10,100 +10,22 @@
     "yield":"1"
   },
   "ingredients":{
-    "dd":[
-      {
-        "amount":{
-          "quantity":"1 1/2",
-          "unit":"cups"
-        },
-        "item":"Toasted Almonds; chopped"
-      },
-      {
-        "amount":{
-          "quantity":"1",
-          "unit":"package"
-        },
-        "item":"Yellow cake mix; no pudding"
-      },
-      {
-        "amount":{
-          "quantity":"1",
-          "unit":"package"
-        },
-        "item":"Vanilla instant pudding"
-      },
-      {
-        "amount":{
-          "quantity":"4",
-          "unit":""
-        },
-        "item":"Eggs"
-      },
-      {
-        "amount":{
-          "quantity":"1/2",
-          "unit":"cups"
-        },
-        "item":"Vegetable oil"
-      },
-      {
-        "amount":{
-          "quantity":"1/2",
-          "unit":"cups"
-        },
-        "item":"Water"
-      },
-      {
-        "amount":{
-          "quantity":"1/2",
-          "unit":"cups"
-        },
-        "item":"Amaretto"
-      },
-      {
-        "amount":{
-          "quantity":"1",
-          "unit":"teaspoon"
-        },
-        "item":"Almond extract"
-      }
+    "":[
+      "1 1/2 cups of Toasted Almonds; chopped",
+      "1 package of Yellow cake mix; no pudding",
+      "1 package of Vanilla instant pudding",
+      "4 Eggs",
+      "1/2 cups of Vegetable oil",
+      "1/2 cups of Water",
+      "1/2 cups of Amaretto",
+      "teaspoon of Almond extract"
     ],
     "GLAZE":[
-      {
-        "amount":{
-          "quantity":"1/2",
-          "unit":"cups"
-        },
-        "item":"Sugar"
-      },
-      {
-        "amount":{
-          "quantity":"1/4",
-          "unit":"cups"
-        },
-        "item":"Water"
-      },
-      {
-        "amount":{
-          "quantity":"2",
-          "unit":"tablespoons"
-        },
-        "item":"Butter"
-      },
-      {
-        "amount":{
-          "quantity":"1/4",
-          "unit":"cups"
-        },
-        "item":"Amaretto"
-      },
-      {
-        "amount":{
-          "quantity":"1/2",
-          "unit":"teaspoons"
-        },
-        "item":"Almond extract"
-      }
+      "1/2 cups of Sugar",
+      "1/4 cup of Water",
+      "2 tablespoons of Butter",
+      "1/4 of Amaretto",
+      "1/2 teaspoons of Almond extract"
     ]
   },
   "directions":[
