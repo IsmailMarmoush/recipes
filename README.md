@@ -2,7 +2,7 @@
 
 ## 1.0 Build and Run the application
 
-### Build
+#### 1.1 Build
 
 1. Make sure you have openjdk 16
 2. Maven 3.6.3
@@ -13,14 +13,14 @@
     4. Copy that token to the [.github/setting.xml](.github/settings.xml) file in the password
     5. Don't forget to put your GitHub username instead of username
 
-### 1.1 Run through docker
+#### 1.2 Run through docker
 
 1. Make sure docker is installed
 2. Inside the project main directory do `docker build . -t recipes:latest`
 3. then `docker run -it recipes:latest`
 4. Your application would be running on port 8090
 
-### 1.2 Run on local
+#### 1.3 Run on local
 
 1. Run `java --enable-preview -jar app/target/io.memoria-recipes-app-0.0.1.jar`
 
@@ -29,7 +29,7 @@
 > As per email, we're using Json instead of XML for the initial recipes and since we're flexible with decisions;
 > the following decisions were made
 
-### 2.1 API decisions
+#### 2.1 API decisions
 
 * Converting all XMLs to JSON
 * The JSON format would contain `{ "$type":"Recipe05", ....}` as type reference
