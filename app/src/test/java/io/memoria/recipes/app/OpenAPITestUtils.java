@@ -12,7 +12,7 @@ import org.openapi4j.schema.validator.v3.SchemaValidator;
 
 public class OpenAPITestUtils {
 
-  public static void schemaValidator(OpenApi3 api, String filePath, String schemaName)
+  public static void validateSchema(OpenApi3 api, String filePath, String schemaName)
           throws EncodeException, DecodeException, ValidationException {
     JsonNode schemaNode = api.getComponents().getSchema(schemaName).toNode();
     var url = ClassLoader.getSystemResource(filePath);

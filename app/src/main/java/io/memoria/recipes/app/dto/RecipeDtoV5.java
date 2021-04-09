@@ -1,6 +1,7 @@
 package io.memoria.recipes.app.dto;
 
 import io.memoria.recipes.core.recipe.Head;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.vavr.collection.HashMap;
 import io.vavr.collection.List;
@@ -16,9 +17,9 @@ public final record RecipeDtoV5(Head head, Set<String> ingredients, String direc
          recipe.ingredients().values().toSet().flatMap(Function.identity()),
          recipe.directions().mkString(" "));
   }
-
+  
   @Override
   public Recipe toRecipe() {
-    return new Recipe(head, HashMap.of(BASE_INGREDIENTS, ingredients), List.of(directions));
+    return new QuickRecipe(head, HashMap.of(BASE_INGREDIENTS, ingredients), List.of(directions));
   }
 }

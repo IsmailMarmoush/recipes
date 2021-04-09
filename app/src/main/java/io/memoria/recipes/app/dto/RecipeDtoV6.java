@@ -1,6 +1,7 @@
 package io.memoria.recipes.app.dto;
 
 import io.memoria.recipes.core.recipe.Head;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.vavr.collection.List;
 import io.vavr.collection.Map;
@@ -14,6 +15,6 @@ public final record RecipeDtoV6(Head head, Map<String, Set<String>> ingredients,
 
   @Override
   public Recipe toRecipe() {
-    return new Recipe(head, ingredients, directions);
+    return new QuickRecipe(head, ingredients, directions);
   }
 }

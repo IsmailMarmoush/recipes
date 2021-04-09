@@ -4,6 +4,7 @@ import io.memoria.recipes.app.dto.RecipeDto;
 import io.memoria.recipes.app.dto.RecipeDtoV5;
 import io.memoria.recipes.app.dto.RecipeDtoV6;
 import io.memoria.recipes.core.recipe.Head;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.vavr.collection.HashMap;
 import io.vavr.collection.HashSet;
@@ -18,9 +19,10 @@ public class TestResource {
   public static final String recipeZucchiniDish;
   public static final String recipeOmeletteV6;
   public static final String recipeOmeletteV5;
-
   // Controllers Json
+  public static final String allRecipes;
   public static final String categories;
+  public static final String vegetableRecipes;
 
   // Recipes objects
   public static final RecipeDto omeletteV5 = new RecipeDtoV5(omeletteRecipe());
@@ -34,7 +36,9 @@ public class TestResource {
     recipeOmeletteV5 = file.read("recipes/omeletteV5.json").block();
     recipeOmeletteV6 = file.read("recipes/omeletteV6.json").block();
     // Controllers Json
+    allRecipes = file.read("controller/all.json").block();
     categories = file.read("controller/categories.json").block();
+    vegetableRecipes = file.read("controller/vegetableRecipes.json").block();
   }
 
   private TestResource() {}
@@ -48,6 +52,6 @@ public class TestResource {
                              "put the salt on eggs",
                              "heat the pan with oil",
                              "pour the whisked eggs");
-    return new Recipe(head, HashMap.of("base", ingredients), directions);
+    return new QuickRecipe(head, HashMap.of("base", ingredients), directions);
   }
 }

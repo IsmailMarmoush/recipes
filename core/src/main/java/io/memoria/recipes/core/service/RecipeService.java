@@ -17,19 +17,19 @@ public class RecipeService {
     this.recipeSearchRepo = recipeSearchRepo;
   }
 
-  Mono<Id> create(Recipe recipe) {
+  public Mono<Id> create(Recipe recipe) {
     return this.recipeRepo.create(recipe);
   }
 
-  Flux<Recipe> recipes() {
+  public Flux<Recipe> recipes() {
     return this.recipeRepo.recipes();
   }
 
-  Flux<Recipe> recipes(String filterByCategory) {
+  public Flux<Recipe> recipes(String filterByCategory) {
     return this.recipeRepo.recipes(filterByCategory);
   }
 
-  Flux<Recipe> search(String text) {
+  public Flux<Recipe> search(String text) {
     return this.recipeSearchRepo.search(text);
   }
 }

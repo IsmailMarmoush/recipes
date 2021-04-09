@@ -1,0 +1,26 @@
+[
+  {
+    "head":{
+      "$type":"Head",
+      "title":"Another Zucchini Dish",
+      "categories":[
+        "Vegetables",
+        "Microwave"
+      ],
+      "yield":6
+    },
+    "ingredients":{
+      "Base Ingredients":[
+        "1 can of French fried onion rings 3 oz.",
+        "1 pound of Zucchini; cubed 1/2 \"",
+        "1 cup of Cheddar cheese; shredded",
+        "1 Jar pimentos; 2 1/2 oz, diced",
+        "3 tablespoon of Butter or margarine",
+        "3 Eggs; beaten"
+      ]
+    },
+    "directions":[
+      "Place zucchini and butter in a 2 quart casserole. Cover with plastic wrap.\n  Microwave at high (100%) until tender crisp, 4 to 5 minutes. Stir in egg,\n  pimentos and cheese. Blend well. Cover with plastic wrap. Microwave at\n  medium (50%) until eggs are set, 10 toll minutes. Sprinkle onion rings on\n  top. Microwave at medium (50%) until onion rings are heated, 2 to 2 1/2\n  minutes. Makes 6 servings.\n  \n  Recipe by: diane@keyway.net\n  \n  Posted to recipelu-digest Volume 01 Number 217 by \"Diane Geary\"\n  <diane@keyway.net> on Nov 7, 1997"
+    ]
+  }
+]

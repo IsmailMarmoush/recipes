@@ -1,0 +1,93 @@
+[
+  {
+    "head":{
+      "$type":"Head",
+      "title":"Another Zucchini Dish",
+      "categories":[
+        "Vegetables",
+        "Microwave"
+      ],
+      "yield":6
+    },
+    "ingredients":{
+      "Base Ingredients":[
+        "1 can of French fried onion rings 3 oz.",
+        "1 pound of Zucchini; cubed 1/2 \"",
+        "1 cup of Cheddar cheese; shredded",
+        "1 Jar pimentos; 2 1/2 oz, diced",
+        "3 tablespoon of Butter or margarine",
+        "3 Eggs; beaten"
+      ]
+    },
+    "directions":[
+      "Place zucchini and butter in a 2 quart casserole. Cover with plastic wrap.\n  Microwave at high (100%) until tender crisp, 4 to 5 minutes. Stir in egg,\n  pimentos and cheese. Blend well. Cover with plastic wrap. Microwave at\n  medium (50%) until eggs are set, 10 toll minutes. Sprinkle onion rings on\n  top. Microwave at medium (50%) until onion rings are heated, 2 to 2 1/2\n  minutes. Makes 6 servings.\n  \n  Recipe by: diane@keyway.net\n  \n  Posted to recipelu-digest Volume 01 Number 217 by \"Diane Geary\"\n  <diane@keyway.net> on Nov 7, 1997"
+    ]
+  },
+  {
+    "head":{
+      "$type":"Head",
+      "title":"Amaretto Cake",
+      "categories":[
+        "Cake mixes",
+        "Liquor",
+        "Cakes"
+      ],
+      "yield":1
+    },
+    "ingredients":{
+      "":[
+        "1 package of Yellow cake mix; no pudding",
+        "1 1/2 cups of Toasted Almonds; chopped",
+        "1/2 cups of Vegetable oil",
+        "1/2 cups of Water",
+        "teaspoon of Almond extract",
+        "1/2 cups of Amaretto",
+        "1 package of Vanilla instant pudding",
+        "4 Eggs"
+      ],
+      "GLAZE":[
+        "1/4 of Amaretto",
+        "2 tablespoons of Butter",
+        "1/2 cups of Sugar",
+        "1/2 teaspoons of Almond extract",
+        "1/4 cup of Water"
+      ]
+    },
+    "directions":[
+      "Sprinkle 1 cup almonds into bottom of a well-greased and floured 10\" tube pan set aside.",
+      "Combine cake mix, pudding mix, eggs, oil, water,amaretto, and almond extract in a mixing bowl beat on low speed of an electric mixer til dry ingredients are moistened. ",
+      "Increase speed to medium, and beat 4 minutes.",
+      "Stir in remaining 1/2 cup almonds. Pour batter into prepared tube pan.",
+      "Bake at 325~ for 1 hour or til a wooden pick inserted in center comes out clean. Cool cake in pan 10-15 minutes remove from pan, and cool completely.",
+      "Combine sugar,water, and butter in a small saucepan bring to a boil.",
+      "Reduce heat to medium and gently boil 4-5 minutes, stirring occasionally, until sugar dissolves.",
+      "Remove from heat, and cool 15 minutes. Stir in amaretto and almond extract.",
+      "Punch holes in top of cake with a wooden pick slowly spoon glaze on top of cake, allowing glaze to absorb in cake."
+    ]
+  },
+  {
+    "head":{
+      "$type":"Head",
+      "title":"30 Minute Chili",
+      "categories":[
+        "Chili",
+        "Main dish"
+      ],
+      "yield":6
+    },
+    "ingredients":{
+      "Base Ingredients":[
+        "1 can Kidney beans; (12 oz)",
+        "1 pound of Ground chuck or lean ground; beef",
+        "1 tablespoon of Chili powder; (or to taste)",
+        "1 teaspoon of Salt",
+        "Hot pepper sauce; to taste",
+        "1 Onion; large, chopped",
+        "1 can Tomato soup; undiluted"
+      ]
+    },
+    "directions":[
+      "Brown the meat in a little butter and cook until the meat is brown -- about\n  10 minutes. Add all other ingredients and let simmer for 30 minutes. Your\n  choice of hot sauce may be added to taste.\n  \n  Recipe by: MasterCook Archives\n  \n  Posted to recipelu-digest Volume 01 Number 577 by Rodeo46898\n  <Rodeo46898@aol.com> on Jan 22, 1998"
+    ]
+  }
+]

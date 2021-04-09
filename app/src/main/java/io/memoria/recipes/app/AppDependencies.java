@@ -6,12 +6,17 @@ import io.memoria.jutils.jcore.id.SerialIdGenerator;
 import io.memoria.jutils.jcore.id.UUIDGenerator;
 import io.memoria.recipes.app.AppConfig.Server;
 import io.memoria.recipes.app.controller.CategoryController;
+import io.memoria.recipes.app.controller.RecipesController;
 import io.memoria.recipes.app.controller.VarzController;
 import io.memoria.recipes.app.dto.RecipeDto;
+import io.memoria.recipes.app.dto.RecipeDtoV5;
+import io.memoria.recipes.app.dto.RecipeDtoV6;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.memoria.recipes.core.repo.mem.RecipeMemRepo;
 import io.memoria.recipes.core.service.CategoryService;
+import io.memoria.recipes.core.service.RecipeService;
 import io.netty.handler.ssl.SslContextBuilder;
+import io.vavr.Function1;
 import reactor.netty.http.HttpProtocol;
 import reactor.netty.http.server.HttpServer;
 import reactor.netty.http.server.HttpServerRoutes;
@@ -26,13 +31,21 @@ import static io.memoria.recipes.app.Defaults.jsonV5;
 import static io.memoria.recipes.app.Defaults.jsonV6;
 
 public class AppDependencies {
+  public enum API {
+    V5,
+    V6
+  }
+
   public final HttpServer httpServer;
-  private final IdGenerator idGenerator;
+  // Services
+  private final RecipeService recipeService;
   private final CategoryService categoryService;
 
   public AppDependencies(AppConfig appConfig) {
-    this.idGenerator = createIdGenerator(appConfig.generator());
-    this.categoryService = new CategoryService(new RecipeMemRepo(createDB()));
+    var repo = new RecipeMemRepo(createDB());
+    this.recipeService = new RecipeService(repo, repo);
+    this.categoryService = new CategoryService(repo);
+
     this.httpServer = createServer(appConfig.server(), routesV5(appConfig).andThen(routesV6(appConfig)));
   }
 
@@ -54,15 +67,28 @@ public class AppDependencies {
   }
 
   private Consumer<HttpServerRoutes> routesV5(AppConfig appConfig) {
-    return r -> r.get(appConfig.apiV5().varz(), new VarzController())
-                 .get(appConfig.apiV5().categories(), new CategoryController(jsonV5, categoryService));
+    var varzCont = new VarzController();
+    var recCont = new RecipesController(jsonV5, toDto(API.V5), recipeService);
+    var catCont = new CategoryController(jsonV5, categoryService);
+    return r -> r.get(appConfig.apiV5().varz(), varzCont)
+                 .get(appConfig.apiV5().categories(), catCont)
+                 .get(appConfig.apiV5().recipes(), recCont::recipes)
+                 .get(appConfig.apiV5().recipesSearch(), recCont::recipesSearch)
+                 .post(appConfig.apiV5().recipes(), recCont::createRecipe);
   }
 
   private Consumer<HttpServerRoutes> routesV6(AppConfig appConfig) {
-    return r -> r.get(appConfig.apiV6().varz(), new VarzController())
-                 .get(appConfig.apiV6().categories(), new CategoryController(jsonV6, categoryService));
+    var varzCont = new VarzController();
+    var recCont = new RecipesController(jsonV6, toDto(API.V6), recipeService);
+    var catCont = new CategoryController(jsonV6, categoryService);
+    return r -> r.get(appConfig.apiV6().varz(), varzCont)
+                 .get(appConfig.apiV6().categories(), catCont)
+                 .get(appConfig.apiV6().recipes(), recCont::recipes)
+                 .get(appConfig.apiV6().recipesSearch(), recCont::recipesSearch)
+                 .post(appConfig.apiV6().recipes(), recCont::createRecipe);
   }
 
+  // Todo for Id creation instead of memory based ID which uses the title
   private static IdGenerator createIdGenerator(AppConfig.Generator generator) {
     return switch (generator.type()) {
       case "uuid" -> new UUIDGenerator();
@@ -83,5 +109,12 @@ public class AppDependencies {
       return server.protocol(HttpProtocol.H2).secure(spec -> spec.sslContext(serverSSLContextBuilder));
     }
     return server;
+  }
+
+  private static Function1<Recipe, RecipeDto> toDto(API api) {
+    if (api.equals(API.V5))
+      return RecipeDtoV5::new;
+    else
+      return RecipeDtoV6::new;
   }
 }

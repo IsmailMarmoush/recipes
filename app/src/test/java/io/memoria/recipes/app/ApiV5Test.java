@@ -11,11 +11,11 @@ import org.openapi4j.parser.OpenApi3Parser;
 import org.openapi4j.parser.model.v3.OpenApi3;
 import org.openapi4j.parser.validation.v3.OpenApi3Validator;
 
-class ApiV6V6Test {
+class ApiV5Test {
   private final OpenApi3 api;
 
-  public ApiV6V6Test() throws ResolutionException, ValidationException {
-    var openApiFile = ClassLoader.getSystemResource("API_V6.yaml");
+  public ApiV5Test() throws ResolutionException, ValidationException {
+    var openApiFile = ClassLoader.getSystemResource("API_V5.yaml");
     api = new OpenApi3Parser().parse(openApiFile, false);
   }
 
@@ -29,6 +29,6 @@ class ApiV6V6Test {
   @Test
   @DisplayName("Objects Schema should be valid")
   void schema() throws Exception {
-    OpenAPITestUtils.schemaValidator(api, "model/recipe/RecipeDtoV6.json", RecipeDto.class.getSimpleName());
+    OpenAPITestUtils.validateSchema(api, "model/recipe/RecipeDtoV5.json", RecipeDto.class.getSimpleName());
   }
 }

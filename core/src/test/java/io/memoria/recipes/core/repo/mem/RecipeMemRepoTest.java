@@ -1,6 +1,7 @@
 package io.memoria.recipes.core.repo.mem;
 
 import io.memoria.jutils.jcore.id.Id;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.vavr.collection.HashSet;
 import org.junit.jupiter.api.Assertions;

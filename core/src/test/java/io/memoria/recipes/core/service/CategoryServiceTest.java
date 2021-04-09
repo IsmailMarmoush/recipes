@@ -1,6 +1,7 @@
 package io.memoria.recipes.core.service;
 
 import io.memoria.jutils.jcore.id.Id;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.memoria.recipes.core.repo.mem.RecipeMemRepo;
 import io.vavr.collection.HashSet;

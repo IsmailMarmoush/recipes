@@ -1,6 +1,7 @@
 package io.memoria.recipes.core;
 
 import io.memoria.recipes.core.recipe.Head;
+import io.memoria.recipes.core.recipe.QuickRecipe;
 import io.memoria.recipes.core.recipe.Recipe;
 import io.vavr.collection.HashMap;
 import io.vavr.collection.HashSet;
@@ -19,7 +20,7 @@ public class TestResource {
     var directions = List.of("Sprinkle 1 cup almonds into bottom of a well-greased and floured 10\" tube pan set aside.",
                              "Combine cake mix, pudding mix, eggs, oil, water,amaretto, and almond extract in a mixing bowl beat on low speed of an electric mixer til dry ingredients are moistened. ",
                              "Increase speed to medium, and beat 4 minutes.");
-    return new Recipe(head, HashMap.of("base", ingredients), directions);
+    return new QuickRecipe(head, HashMap.of("base", ingredients), directions);
   }
 
   private static Recipe omelette() {
@@ -31,6 +32,6 @@ public class TestResource {
                              "put the salt on eggs",
                              "heat the pan with oil",
                              "pour the whisked eggs");
-    return new Recipe(head, HashMap.of("base", ingredients), directions);
+    return new QuickRecipe(head, HashMap.of("base", ingredients), directions);
   }
 }
