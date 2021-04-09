@@ -1,5 +1,8 @@
 # Recipes:
 
+* [Api v5](app/src/main/resources/API_V5.yaml)
+* [Api v6](app/src/main/resources/API_V6.yaml)
+
 ## 1.0 Build and Run the application
 
 #### 1.1 Build
